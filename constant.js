@@ -18,9 +18,7 @@ export const statesAndUTs = {
     Manipur: "Manipur",
     Meghalaya: "Meghalaya",
     Mizoram: "Mizoram",
-    Nagaland:
-   
-  "Nagaland",
+    Nagaland:"Nagaland",
     Odisha: "Odisha",
     Punjab: "Punjab",
     Rajasthan: "Rajasthan",
