@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
-
+import cookieParser from "cookie-parser";
 export const auth = (req,res,next) => {
     try{
-        //fetch token from the cookies
-        const token = req.cookies.userCookie;
+        //fetch token from the cookies or header if not in the cookies
+        const token = req.cookies.userCookie || req.header("Authorization")?.replace("Bearer ","");
 
         //token missing
         if(!token){
