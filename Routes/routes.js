@@ -11,11 +11,16 @@ import { getEmployeeDetails,getBankDetails } from "../Controllers/getdata.js";
 import { uploadToCloudinary } from "../Controllers/uploadpic.js";
 import { logout } from "../Controllers/logout.js";
 
+//middleware imports
+import { auth } from "../Middleware/auth.js";
+import { isAdmin } from "../Middleware/isAdmin.js";
+
 // //creating routes for user
-router.post("/register",register);
+router.post("/register",auth,isAdmin,register);
 router.post("/login",login);
 router.get("/logout",logout);
-router.get("/getEmployeeDetails",getEmployeeDetails);
+router.get("/getEmployeeDetails",auth,isAdmin,getEmployeeDetails);
+
 
 //banking details
 router.post("/addBankDetails",bank);
