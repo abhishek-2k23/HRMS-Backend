@@ -47,7 +47,8 @@ export const login = async (req,res) => {
         const payload = { 
             Email : userExist.PersonalDetails.Email,
             id : userExist._id,
-            Name : userExist.PersonalDetails.Name
+            Name : userExist.PersonalDetails.Name,
+            Role : userExist.JobDetails.Role
         }
 
         //generate token
@@ -66,7 +67,7 @@ export const login = async (req,res) => {
         userExist.token = token;
 
         console.log("logged in ");
-        return res.cookie("user-cookie",token,options).status(200).json({
+        return res.cookie("userCookie",token,options).status(200).json({
             status : true,
             message : "You are logged in",
             data : userExist,
