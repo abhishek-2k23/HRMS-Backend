@@ -13,7 +13,7 @@ const userschema = new mongoose.Schema({
         },
         Gender : {
             type : String,
-            enum : ['Male','Female'],
+            enum : ['Male','Female','male','female','other','Other'],
             required : true,
         },
         Email : {
